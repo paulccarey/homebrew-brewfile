@@ -17,7 +17,9 @@ brew 'mackup'
 
 # Applications
 cask 'alfred'
+cask 'dropbox'
 cask 'google-chrome'
+cask 'google-drive'
 cask 'firefox'
 cask 'licecap'
 cask 'pgadmin3'
