@@ -10,7 +10,9 @@ brew 'xz'
 brew 'the_silver_searcher'
 brew 'git'
 brew 'rbenv'
+brew 'rbenv-default-gems'
 brew 'ruby-build'
+brew 'python'
 
 # Utils
 brew 'mackup'
@@ -24,6 +26,10 @@ cask 'firefox'
 cask 'licecap'
 cask 'pgadmin3'
 cask 'skype'
+cask 'flux'
+cask 'macdown'
+cask 'spotify'
+cask 'rubymine'
 
 # quick-look-plugins
 cask 'qlcolorcode'
