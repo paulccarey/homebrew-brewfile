@@ -11,8 +11,11 @@ brew 'the_silver_searcher'
 brew 'git'
 brew 'rbenv'
 brew 'rbenv-default-gems'
+brew 'rbenv-use'
 brew 'ruby-build'
 brew 'python'
+brew 'qt'
+brew 'wget'
 
 # Utils
 brew 'mackup'
@@ -42,3 +45,4 @@ cask 'betterzipql'
 cask 'qlimagesize' 
 cask 'webpquicklook' 
 cask 'suspicious-package'
+
