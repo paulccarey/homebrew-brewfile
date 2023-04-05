@@ -16,3 +16,4 @@ cask "whatsapp"
 
 
 brew "asdf"
+brew "bitwarden-cli"
