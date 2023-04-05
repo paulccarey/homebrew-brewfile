@@ -11,5 +11,6 @@ cask "bitwarden"
 cask "rectangle"
 cask "flow"
 cask "grammarly"
+cask "whatsapp"
 
 brew "asdf"
