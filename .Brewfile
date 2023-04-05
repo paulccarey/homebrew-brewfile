@@ -12,3 +12,4 @@ cask "rectangle"
 cask "flow"
 cask "grammarly"
 
+brew "asdf"
