@@ -13,7 +13,10 @@ cask "flow"
 cask "grammarly"
 cask "slack"
 cask "whatsapp"
+cask "obsidian"
+cask "google-drive"
 
 
 brew "asdf"
 brew "bitwarden-cli"
+
