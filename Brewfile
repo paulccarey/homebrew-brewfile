@@ -1,3 +1,4 @@
+cask "ableton-live-suite"
 cask "google-chrome"
 cask "spotify"
 cask "vlc"
