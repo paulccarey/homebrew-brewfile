@@ -22,4 +22,5 @@ brew "asdf"
 brew "bitwarden-cli"
 brew "fzf"
 brew "libpq"
+brew "wget"
 
