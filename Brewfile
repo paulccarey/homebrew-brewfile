@@ -20,4 +20,5 @@ cask "google-drive"
 
 brew "asdf"
 brew "bitwarden-cli"
+brew "fzf"
 
