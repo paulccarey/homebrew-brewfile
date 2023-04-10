@@ -8,7 +8,6 @@ cask "macvim"
 cask "iterm2"
 cask "dash"
 cask "karabiner-elements"
-cask "bitwarden"
 cask "rectangle"
 cask "flow"
 cask "grammarly"
@@ -23,4 +22,6 @@ brew "bitwarden-cli"
 brew "fzf"
 brew "libpq"
 brew "wget"
+
+mas "bitwarden", id: 1352778147
 
