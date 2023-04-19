@@ -1,4 +1,5 @@
 cask "ableton-live-suite"
+cask "docker"
 cask "google-chrome"
 cask "spotify"
 cask "vlc"
@@ -7,14 +8,15 @@ cask "thunderbird"
 cask "macvim"
 cask "iterm2"
 cask "dash"
-cask "karabiner-elements"
 cask "rectangle"
 cask "flow"
 cask "grammarly"
+cask "grammarly-desktop"
 cask "slack"
 cask "whatsapp"
 cask "obsidian"
 cask "google-drive"
+cask "todoist"
 
 
 # version manager for ruby, node, etc
