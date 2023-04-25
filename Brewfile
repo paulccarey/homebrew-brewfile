@@ -1,4 +1,5 @@
 cask "ableton-live-suite"
+cask "dash"
 cask "docker"
 cask "google-chrome"
 cask "spotify"
