@@ -24,6 +24,9 @@ cask "todoist"
 brew "asdf"
 # for accessing secrets on the command line
 brew "bitwarden-cli"
+# load and unload environment variables from .envrc and .env files based on 
+# current folder and parent directories
+brew "direnv"
 # general purpose fuzzy finder useful for finding things and history
 brew "fzf"
 # postgres library required to build pg gem
