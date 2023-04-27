@@ -18,7 +18,7 @@ cask "whatsapp"
 cask "obsidian"
 cask "google-drive"
 cask "todoist"
-
+cask "visual-studio-code"
 
 # version manager for ruby, node, etc
 brew "asdf"
