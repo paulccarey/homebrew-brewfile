@@ -1,3 +1,5 @@
+tap "heroku/brew"
+
 cask "ableton-live-suite"
 cask "dash"
 cask "docker"
@@ -32,6 +34,7 @@ brew "fzf"
 # postgres library required to build pg gem
 brew "libpq"
 brew "wget"
+brew "heroku"
 
 # required by asdf for plugins but generally useful for building things
 brew "gpg"
