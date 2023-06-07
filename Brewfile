@@ -21,6 +21,7 @@ cask "obsidian"
 cask "google-drive"
 cask "todoist"
 cask "visual-studio-code"
+cask "cloudflare-warp"
 
 # version manager for ruby, node, etc
 brew "asdf"
