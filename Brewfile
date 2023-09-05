@@ -22,11 +22,14 @@ cask "google-drive"
 cask "todoist"
 cask "visual-studio-code"
 cask "cloudflare-warp"
+cask "tableplus"
+cask "dbeaver-community"
 
 # version manager for ruby, node, etc
 brew "asdf"
 # for accessing secrets on the command line
 brew "bitwarden-cli"
+brew "kubectl"
 # load and unload environment variables from .envrc and .env files based on 
 # current folder and parent directories
 brew "direnv"
@@ -40,6 +43,9 @@ brew "heroku"
 # required by asdf for plugins but generally useful for building things
 brew "gpg"
 brew "gawk"
+
+# required for ruby 3.2
+brew "rust"
 
 mas "bitwarden", id: 1352778147
 
