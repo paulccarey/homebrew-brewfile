@@ -1,3 +1,4 @@
+# Use brew bundle install --global to install from here
 tap "heroku/brew"
 
 cask "ableton-live-suite"
@@ -24,6 +25,10 @@ cask "visual-studio-code"
 cask "cloudflare-warp"
 cask "tableplus"
 cask "dbeaver-community"
+cask "zoom"
+cask "joplin"
+cask "notion"
+cask "orbstack"
 
 # version manager for ruby, node, etc
 brew "asdf"
