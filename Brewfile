@@ -3,7 +3,6 @@ tap "heroku/brew"
 
 cask "ableton-live-suite"
 cask "dash"
-cask "docker"
 cask "google-chrome"
 cask "spotify"
 cask "vlc"
@@ -29,6 +28,7 @@ cask "zoom"
 cask "joplin"
 cask "notion"
 cask "orbstack"
+cask "maccy"
 
 # version manager for ruby, node, etc
 brew "asdf"
