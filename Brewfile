@@ -1,9 +1,12 @@
 # Use brew bundle install --global to install from here
 tap "heroku/brew"
 
+cask "arc"
 cask "ableton-live-suite"
 cask "dash"
 cask "google-chrome"
+# Not supported browser currently with work
+#cask "brave-browser"
 cask "spotify"
 cask "vlc"
 cask "logseq"
@@ -20,6 +23,7 @@ cask "whatsapp"
 cask "obsidian"
 cask "google-drive"
 cask "todoist"
+cask "ticktick"
 cask "visual-studio-code"
 cask "cloudflare-warp"
 cask "tableplus"
@@ -29,6 +33,8 @@ cask "joplin"
 cask "notion"
 cask "orbstack"
 cask "maccy"
+cask "postman"
+cask "raycast"
 
 # version manager for ruby, node, etc
 brew "asdf"
@@ -44,6 +50,7 @@ brew "fzf"
 brew "libpq"
 brew "wget"
 brew "heroku"
+brew "gh"
 
 # required by asdf for plugins but generally useful for building things
 brew "gpg"
@@ -52,5 +59,8 @@ brew "gawk"
 # required for ruby 3.2
 brew "rust"
 
-mas "bitwarden", id: 1352778147
+#mas "bitwarden", id: 1352778147
+
+# better git diff
+brew "delta"
 
