@@ -7,6 +7,7 @@ cask "dash"
 cask "google-chrome"
 # Not supported browser currently with work
 #cask "brave-browser"
+cask "pushplaylabs-sidekick"
 cask "spotify"
 cask "vlc"
 cask "logseq"
@@ -59,8 +60,9 @@ brew "gawk"
 # required for ruby 3.2
 brew "rust"
 
-#mas "bitwarden", id: 1352778147
+mas "bitwarden", id: 1352778147
 
 # better git diff
 brew "delta"
 
+mas "perplexity-ask-anything", id: 6714467650
