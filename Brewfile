@@ -1,4 +1,4 @@
-# Use brew bundle install --global to install from here
+# brew bundle --global 
 tap "heroku/brew"
 
 cask "arc"
@@ -7,7 +7,6 @@ cask "dash"
 cask "google-chrome"
 # Not supported browser currently with work
 #cask "brave-browser"
-cask "pushplaylabs-sidekick"
 cask "spotify"
 cask "vlc"
 cask "logseq"
@@ -36,6 +35,19 @@ cask "orbstack"
 cask "maccy"
 cask "postman"
 cask "raycast"
+cask "msty"
+cask "microsoft-onenote"
+cask "simplenote"
+# "AI" code editors
+cask "cursor"
+cask "zed"
+cask "windsurf"
+
+
+
+cask "bruno"
+cask "jetbrains-toolbox"
+cask "zen"
 
 # version manager for ruby, node, etc
 brew "asdf"
@@ -57,6 +69,9 @@ brew "gh"
 brew "gpg"
 brew "gawk"
 
+# required for certain vs code extensions such as ruby sorbet
+brew 'watchman'
+
 # required for ruby 3.2
 brew "rust"
 
@@ -64,5 +79,15 @@ mas "bitwarden", id: 1352778147
 
 # better git diff
 brew "delta"
+# run local llms
+brew "ollama"
+#log file viewer in terminal
+brew 'lnav'
+
+# benchmark cli commands
+brew 'hyperfine'
+
+# simple find alternative
+brew 'fd'
 
 mas "perplexity-ask-anything", id: 6714467650
