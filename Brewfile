@@ -1,5 +1,6 @@
 # brew bundle --global 
 tap "heroku/brew"
+tap "datadog-labs/pack"
 
 cask "arc"
 cask "ableton-live-suite"
@@ -19,6 +20,8 @@ cask "flow"
 cask "grammarly"
 cask "grammarly-desktop"
 cask "slack"
+cask "scratch"
+cask "minecraft-education"
 cask "whatsapp"
 cask "obsidian"
 cask "google-drive"
@@ -37,11 +40,11 @@ cask "postman"
 cask "raycast"
 cask "msty"
 cask "microsoft-onenote"
-cask "simplenote"
 # "AI" code editors
 cask "cursor"
 cask "zed"
 cask "windsurf"
+cask "caffeine"
 
 
 
@@ -90,4 +93,11 @@ brew 'hyperfine'
 # simple find alternative
 brew 'fd'
 
+brew 'uv'
+
 mas "perplexity-ask-anything", id: 6714467650
+
+brew 'derailed/k9s/k9s'
+
+# datadog cli
+brew 'datadog-labs/pack/pup'
