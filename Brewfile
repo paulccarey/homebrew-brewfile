@@ -1,9 +1,10 @@
 # brew bundle --global 
 tap "heroku/brew"
 tap "datadog-labs/pack"
+tap "atlassian/homebrew-acli"
 
-cask "arc"
 cask "ableton-live-suite"
+cask "thebrowsercompany-dia"
 cask "dash"
 cask "google-chrome"
 # Not supported browser currently with work
@@ -11,7 +12,6 @@ cask "google-chrome"
 cask "spotify"
 cask "vlc"
 cask "logseq"
-cask "thunderbird"
 cask "macvim"
 cask "iterm2"
 cask "dash"
@@ -21,16 +21,11 @@ cask "grammarly"
 cask "grammarly-desktop"
 cask "slack"
 cask "scratch"
-cask "minecraft-education"
 cask "whatsapp"
 cask "obsidian"
 cask "google-drive"
-cask "todoist"
-cask "ticktick"
 cask "visual-studio-code"
 cask "cloudflare-warp"
-cask "tableplus"
-cask "dbeaver-community"
 cask "zoom"
 cask "joplin"
 cask "notion"
@@ -38,19 +33,18 @@ cask "orbstack"
 cask "maccy"
 cask "postman"
 cask "raycast"
-cask "msty"
-cask "microsoft-onenote"
 # "AI" code editors
 cask "cursor"
 cask "zed"
-cask "windsurf"
-cask "caffeine"
 
+cask "caffeine"
 
 
 cask "bruno"
 cask "jetbrains-toolbox"
-cask "zen"
+
+# backup and restore mac app configuration
+brew "mackup"
 
 # version manager for ruby, node, etc
 brew "asdf"
@@ -101,3 +95,10 @@ brew 'derailed/k9s/k9s'
 
 # datadog cli
 brew 'datadog-labs/pack/pup'
+
+# atlassian cli
+brew "acli"
+
+# sourcegraph cli
+tap "sourcegraph/src-cli"
+brew "sourcegraph/src-cli/src-cli"
