@@ -46,6 +46,12 @@ cask "jetbrains-toolbox"
 # backup and restore mac app configuration
 brew "mackup"
 
+# AI tools
+# cut token usage when calling cli's
+brew "rtk"
+# AI "issue" tracker and memory management
+brew "beads"
+
 # version manager for ruby, node, etc
 brew "asdf"
 # for accessing secrets on the command line
