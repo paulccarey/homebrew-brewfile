@@ -1,110 +1,149 @@
-# brew bundle --global 
+# brew bundle --global
+
+# --- Taps ---
 tap "heroku/brew"
 tap "datadog-labs/pack"
 tap "atlassian/homebrew-acli"
+tap "sourcegraph/src-cli"
 
-cask "ableton-live-suite"
-cask "thebrowsercompany-dia"
-cask "dash"
-cask "google-chrome"
-# Not supported browser currently with work
-#cask "brave-browser"
-cask "spotify"
-cask "vlc"
-cask "logseq"
-cask "macvim"
+# --- Terminals & Editors ---
+# GPU-accelerated terminal
+cask "ghostty"
+# feature-rich terminal emulator
 cask "iterm2"
-cask "dash"
-cask "rectangle"
-cask "flow"
-cask "grammarly"
-cask "grammarly-desktop"
-cask "slack"
-cask "scratch"
-cask "whatsapp"
-cask "obsidian"
-cask "google-drive"
+# GUI wrapper for vim
+cask "macvim-app"
+# VS Code editor
 cask "visual-studio-code"
-cask "cloudflare-warp"
-cask "zoom"
-cask "joplin"
-cask "notion"
-cask "orbstack"
-cask "maccy"
-cask "postman"
-cask "raycast"
-# "AI" code editors
+# AI-assisted code editor built on VS Code
 cask "cursor"
-cask "zed"
-
-cask "caffeine"
-
-
-cask "bruno"
+# JetBrains IDE suite manager
 cask "jetbrains-toolbox"
 
-# backup and restore mac app configuration
-brew "mackup"
+# --- Browsers ---
+# Google Chrome browser
+cask "google-chrome"
+# Dia browser by The Browser Company
+cask "thebrowsercompany-dia"
 
-# AI tools
-# cut token usage when calling cli's
+# --- Communication ---
+# Team messaging
+cask "slack"
+# WhatsApp desktop client
+cask "whatsapp"
+
+# --- Productivity & Window Management ---
+# Keyboard-driven window manager
+cask "rectangle"
+# App launcher and productivity hub
+cask "raycast"
+# Clipboard manager with history
+cask "maccy"
+# Window switcher (alt-tab replacement)
+cask "witch"
+# Prevent display sleep on demand
+cask "caffeine"
+
+# --- Notes & Knowledge ---
+# Markdown-based personal knowledge base
+cask "obsidian"
+# Open-source note-taking with sync
+cask "joplin"
+
+# --- Media ---
+# Music and podcast streaming
+cask "spotify"
+# Universal media player
+cask "vlc"
+# Voice/audio tool
+cask "fluidvoice"
+
+# --- Cloud & Storage ---
+# Google Drive desktop sync
+cask "google-drive"
+# Cloudflare WARP VPN and DNS
+cask "cloudflare-warp"
+# FTP, S3, and cloud storage browser
+cask "cyberduck"
+
+# --- Development Tools ---
+# Docker desktop and Linux VM alternative
+cask "orbstack"
+# API client (Bruno)
+cask "bruno"
+
+# --- AI Tools ---
+# Anthropic Claude CLI
+cask "claude-code"
+# Google Gemini desktop app
+cask "google-gemini"
+
+# --- Brews: AI Tools ---
+# Token-optimized CLI proxy — reduces Claude API token usage 60-90%
 brew "rtk"
-# AI "issue" tracker and memory management
+# AI-powered issue tracker and memory management
 brew "beads"
 
-# version manager for ruby, node, etc
+# --- Brews: Version Management ---
+# Multi-runtime version manager (ruby, node, python, etc.)
 brew "asdf"
-# for accessing secrets on the command line
-brew "bitwarden-cli"
-brew "kubectl"
-# load and unload environment variables from .envrc and .env files based on 
-# current folder and parent directories
+
+# --- Brews: Environment & Secrets ---
+# Load/unload env vars from .envrc based on current directory
 brew "direnv"
-# general purpose fuzzy finder useful for finding things and history
-brew "fzf"
-# postgres library required to build pg gem
-brew "libpq"
-brew "wget"
-brew "heroku"
+# Bitwarden CLI for secrets access in terminal
+brew "bitwarden-cli"
+
+# --- Brews: Git & Dev Workflow ---
+# GitHub CLI
 brew "gh"
-
-# required by asdf for plugins but generally useful for building things
-brew "gpg"
-brew "gawk"
-
-# required for certain vs code extensions such as ruby sorbet
-brew 'watchman'
-
-# required for ruby 3.2
-brew "rust"
-
-mas "bitwarden", id: 1352778147
-
-# better git diff
+# GitLab CLI
+brew "glab"
+# Syntax-highlighted, side-by-side git diff pager
 brew "delta"
-# run local llms
-brew "ollama"
-#log file viewer in terminal
-brew 'lnav'
+# Backup and restore macOS app configuration
+brew "mackup"
 
-# benchmark cli commands
-brew 'hyperfine'
+# --- Brews: Kubernetes ---
+# Kubernetes CLI
+brew "kubectl"
+# Terminal UI for Kubernetes cluster management
+brew "derailed/k9s/k9s"
 
-# simple find alternative
-brew 'fd'
+# --- Brews: Build Dependencies ---
+# GnuPG — required by asdf plugins and general crypto
+brew "gpg"
+# GNU awk — required for building various tools
+brew "gawk"
+# Rust compiler — required for Ruby 3.2 native extensions
+brew "rust"
+# PostgreSQL client library — required to build the pg gem
+brew "libpq"
+# File watcher — required by VS Code extensions (e.g. Sorbet)
+brew "watchman"
 
-brew 'uv'
+# --- Brews: CLI Utilities ---
+# General-purpose fuzzy finder for files, history, and more
+brew "fzf"
+# Fast and user-friendly alternative to find
+brew "fd"
+# Non-interactive network downloader
+brew "wget"
+# Smarter cd — learns frequent directories
+brew "zoxide"
+# Terminal log file viewer with filtering and highlighting
+brew "lnav"
+# Fast Python package and project manager
+brew "uv"
 
-mas "perplexity-ask-anything", id: 6714467650
-
-brew 'derailed/k9s/k9s'
-
-# datadog cli
-brew 'datadog-labs/pack/pup'
-
-# atlassian cli
+# --- Brews: Platform CLIs ---
+# Atlassian CLI for Jira and Confluence
 brew "acli"
-
-# sourcegraph cli
-tap "sourcegraph/src-cli"
+# Datadog CLI
+brew "datadog-labs/pack/pup"
+# Sourcegraph CLI for code search
 brew "sourcegraph/src-cli/src-cli"
+
+# --- Mac App Store ---
+# Bitwarden password manager
+mas "bitwarden", id: 1352778147
