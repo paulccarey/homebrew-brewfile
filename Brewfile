@@ -49,6 +49,8 @@ cask "caffeine"
 cask "obsidian"
 # Open-source note-taking with sync
 cask "joplin"
+# Connected notes and knowledge management
+cask "capacities"
 
 # --- Media ---
 # Music and podcast streaming
@@ -75,6 +77,10 @@ cask "bruno"
 # --- AI Tools ---
 # Anthropic Claude CLI
 cask "claude-code"
+# OpenAI Codex desktop app
+cask "codex-app"
+# OpenAI Codex CLI
+cask "codex"
 # Google Gemini desktop app
 cask "google-gemini"
 
@@ -147,3 +153,9 @@ brew "sourcegraph/src-cli/src-cli"
 # --- Mac App Store ---
 # Bitwarden password manager
 mas "bitwarden", id: 1352778147
+# Apple presentation app
+mas "Keynote", id: 361285480
+# Apple word processor
+mas "Pages", id: 361309726
+# Apple spreadsheet app
+mas "Numbers", id: 361304891
