@@ -5,6 +5,7 @@ tap "heroku/brew"
 tap "datadog-labs/pack"
 tap "atlassian/homebrew-acli"
 tap "sourcegraph/src-cli"
+tap "ai4dp/ensemble", "ssh://git@code.corp.indeed.com/ai4dp/ensemble.git"
 
 # --- Terminals & Editors ---
 # GPU-accelerated terminal
@@ -59,6 +60,8 @@ cask "spotify"
 cask "vlc"
 # Voice/audio tool
 cask "fluidvoice"
+# Command-line audio/video converter and toolkit
+brew "ffmpeg"
 
 # --- Cloud & Storage ---
 # Google Drive desktop sync
@@ -79,10 +82,20 @@ cask "bruno"
 cask "claude-code"
 # OpenAI Codex desktop app
 cask "codex-app"
+# Chat GPT app
+cask "chatgpt"
 # OpenAI Codex CLI
 cask "codex"
 # Google Gemini desktop app
 cask "google-gemini"
+# Google AntiGravity
+cask "antigravity"
+# Google AntiGravity IDE
+cask "antigravity-ide"
+# Run and chat with local LLMs
+cask "lm-studio"
+# Indeed AI4DP Ensemble
+cask "ai4dp/ensemble/ensemble"
 
 # --- Brews: AI Tools ---
 # Token-optimized CLI proxy — reduces Claude API token usage 60-90%
@@ -149,6 +162,10 @@ brew "acli"
 brew "datadog-labs/pack/pup"
 # Sourcegraph CLI for code search
 brew "sourcegraph/src-cli/src-cli"
+
+# --- Hardware & Making ---
+# Bambu Lab 3D printer slicing software
+cask "bambu-studio"
 
 # --- Mac App Store ---
 # Bitwarden password manager
