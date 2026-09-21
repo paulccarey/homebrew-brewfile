@@ -1,7 +1,7 @@
 # brew bundle --global
 #
-# Everything here installs on every machine except the "Work machine only"
-# section at the bottom, which is gated on INDEED_USERNAME being set.
+# Everything here installs on every machine except the profile-specific
+# sections at the bottom, which are gated on INDEED_USERNAME being set.
 
 # Homebrew scrubs the environment before evaluating this file, so a bare
 # INDEED_USERNAME never reaches ENV here -- only HOMEBREW_*-prefixed vars
@@ -23,8 +23,6 @@ cask "iterm2"
 cask "macvim-app"
 # VS Code editor
 cask "visual-studio-code"
-
-cask "mark-text"
 
 # --- Browsers ---
 # Google Chrome browser
@@ -159,6 +157,12 @@ mas "Keynote", id: 361285480
 mas "Pages", id: 361309726
 # Apple spreadsheet app
 mas "Numbers", id: 361304891
+
+# --- Personal machine only (INDEED_USERNAME is not set) ---
+unless WORK_MACHINE
+  # DJ software for music preparation and management
+  cask "rekordbox"
+end
 
 # --- Work machine only (INDEED_USERNAME is set) ---
 if WORK_MACHINE

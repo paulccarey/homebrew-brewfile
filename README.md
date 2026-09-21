@@ -11,9 +11,10 @@ Global Brewfile for setting up a new Mac. Installs apps, CLI tools, and Mac App 
 ## Profiles: work vs personal
 
 The Brewfile is Ruby, so there is one file and no extra tooling. Everything
-installs everywhere except the `if WORK_MACHINE` block at the bottom, which
-holds work-only apps (Cursor, JetBrains Toolbox, Ensemble, kubectl, k9s, rust,
-acli, pup, src-cli) and the taps they need.
+installs everywhere except the profile-specific blocks at the bottom:
+`if WORK_MACHINE` holds work-only apps (Cursor, JetBrains Toolbox, Ensemble,
+kubectl, k9s, rust, acli, pup, src-cli) and the taps they need, while
+`unless WORK_MACHINE` holds personal-only apps (rekordbox).
 
 A machine counts as a work machine when `INDEED_USERNAME` is set. Homebrew
 scrubs the environment before it evaluates the Brewfile, so that variable never
