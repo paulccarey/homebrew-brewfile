@@ -1,11 +1,18 @@
 # brew bundle --global
+#
+# Everything here installs on every machine except the "Work machine only"
+# section at the bottom, which is gated on INDEED_USERNAME being set.
 
-# --- Taps ---
-tap "heroku/brew"
-tap "datadog-labs/pack"
-tap "atlassian/homebrew-acli"
-tap "sourcegraph/src-cli"
-tap "ai4dp/ensemble", "ssh://git@code.corp.indeed.com/ai4dp/ensemble.git"
+# Homebrew scrubs the environment before evaluating this file, so a bare
+# INDEED_USERNAME never reaches ENV here -- only HOMEBREW_*-prefixed vars
+# survive. INDEED_USERNAME is set by ~/.zprofile (via ~/env/etc/indeed_profile),
+# so read it back out of a login zsh. Non-interactive, ~150ms, no rc to hang on.
+# Set HOMEBREW_INDEED_USERNAME to skip the subshell.
+WORK_MACHINE = [
+  ENV["HOMEBREW_INDEED_USERNAME"],
+  ENV["INDEED_USERNAME"],
+  `/bin/zsh -lc 'printf %s "$INDEED_USERNAME"' 2>/dev/null`,
+].any? { |v| !v.to_s.strip.empty? }
 
 # --- Terminals & Editors ---
 # GPU-accelerated terminal
@@ -16,10 +23,8 @@ cask "iterm2"
 cask "macvim-app"
 # VS Code editor
 cask "visual-studio-code"
-# AI-assisted code editor built on VS Code
-cask "cursor"
-# JetBrains IDE suite manager
-cask "jetbrains-toolbox"
+
+cask "mark-text"
 
 # --- Browsers ---
 # Google Chrome browser
@@ -40,18 +45,12 @@ cask "rectangle"
 cask "raycast"
 # Clipboard manager with history
 cask "maccy"
-# Window switcher (alt-tab replacement)
-cask "witch"
 # Prevent display sleep on demand
 cask "caffeine"
 
 # --- Notes & Knowledge ---
 # Markdown-based personal knowledge base
 cask "obsidian"
-# Open-source note-taking with sync
-cask "joplin"
-# Connected notes and knowledge management
-cask "capacities"
 
 # --- Media ---
 # Music and podcast streaming
@@ -80,8 +79,6 @@ cask "bruno"
 # --- AI Tools ---
 # Anthropic Claude CLI
 cask "claude-code"
-# OpenAI Codex desktop app
-cask "codex-app"
 # Chat GPT app
 cask "chatgpt"
 # OpenAI Codex CLI
@@ -94,8 +91,6 @@ cask "antigravity"
 cask "antigravity-ide"
 # Run and chat with local LLMs
 cask "lm-studio"
-# Indeed AI4DP Ensemble
-cask "ai4dp/ensemble/ensemble"
 
 # --- Brews: AI Tools ---
 # Token-optimized CLI proxy — reduces Claude API token usage 60-90%
@@ -123,19 +118,11 @@ brew "delta"
 # Backup and restore macOS app configuration
 brew "mackup"
 
-# --- Brews: Kubernetes ---
-# Kubernetes CLI
-brew "kubectl"
-# Terminal UI for Kubernetes cluster management
-brew "derailed/k9s/k9s"
-
 # --- Brews: Build Dependencies ---
 # GnuPG — required by asdf plugins and general crypto
 brew "gpg"
 # GNU awk — required for building various tools
 brew "gawk"
-# Rust compiler — required for Ruby 3.2 native extensions
-brew "rust"
 # PostgreSQL client library — required to build the pg gem
 brew "libpq"
 # File watcher — required by VS Code extensions (e.g. Sorbet)
@@ -155,17 +142,13 @@ brew "lnav"
 # Fast Python package and project manager
 brew "uv"
 
-# --- Brews: Platform CLIs ---
-# Atlassian CLI for Jira and Confluence
-brew "acli"
-# Datadog CLI
-brew "datadog-labs/pack/pup"
-# Sourcegraph CLI for code search
-brew "sourcegraph/src-cli/src-cli"
-
 # --- Hardware & Making ---
 # Bambu Lab 3D printer slicing software
 cask "bambu-studio"
+
+# --- Fonts ---
+# Terminal font for kitty (Ghostty bundles its own copy)
+cask "font-jetbrains-mono"
 
 # --- Mac App Store ---
 # Bitwarden password manager
@@ -176,3 +159,32 @@ mas "Keynote", id: 361285480
 mas "Pages", id: 361309726
 # Apple spreadsheet app
 mas "Numbers", id: 361304891
+
+# --- Work machine only (INDEED_USERNAME is set) ---
+if WORK_MACHINE
+  tap "datadog-labs/pack"
+  tap "atlassian/homebrew-acli"
+  tap "sourcegraph/src-cli"
+  tap "ai4dp/ensemble", "ssh://git@code.corp.indeed.com/ai4dp/ensemble.git"
+
+  # AI-assisted code editor built on VS Code
+  cask "cursor"
+  # JetBrains IDE suite manager
+  cask "jetbrains-toolbox"
+  # Indeed AI4DP Ensemble
+  cask "ai4dp/ensemble/ensemble"
+
+  # Kubernetes CLI
+  brew "kubectl"
+  # Terminal UI for Kubernetes cluster management
+  brew "derailed/k9s/k9s"
+  # Rust compiler — required for Ruby 3.2 native extensions
+  brew "rust"
+
+  # Atlassian CLI for Jira and Confluence
+  brew "acli"
+  # Datadog CLI
+  brew "datadog-labs/pack/pup"
+  # Sourcegraph CLI for code search
+  brew "sourcegraph/src-cli/src-cli"
+end

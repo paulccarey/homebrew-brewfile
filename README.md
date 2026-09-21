@@ -6,7 +6,26 @@ Global Brewfile for setting up a new Mac. Installs apps, CLI tools, and Mac App 
 
 - **Apps**: Chrome, Slack, Zoom, VS Code, Cursor, Zed, Obsidian, Raycast, iTerm2, OrbStack, Notion, Spotify, etc.
 - **CLI tools**: `gh`, `kubectl`, `fzf`, `direnv`, `asdf`, `delta`, `bitwarden-cli`, `rtk`, `uv`, `pup`, `acli`, `src-cli`, etc.
-- **Mac App Store**: Bitwarden, Perplexity
+- **Mac App Store**: Bitwarden, Keynote, Pages, Numbers
+
+## Profiles: work vs personal
+
+The Brewfile is Ruby, so there is one file and no extra tooling. Everything
+installs everywhere except the `if WORK_MACHINE` block at the bottom, which
+holds work-only apps (Cursor, JetBrains Toolbox, Ensemble, kubectl, k9s, rust,
+acli, pup, src-cli) and the taps they need.
+
+A machine counts as a work machine when `INDEED_USERNAME` is set. Homebrew
+scrubs the environment before it evaluates the Brewfile, so that variable never
+reaches `ENV` directly -- the Brewfile reads it back out of a login zsh instead.
+No setup needed on either machine. Export `HOMEBREW_INDEED_USERNAME` to skip
+that subshell, or to force the work profile on a machine that lacks the var.
+
+Check which profile you resolve to:
+
+```bash
+brew bundle list --all --global
+```
 
 ---
 
