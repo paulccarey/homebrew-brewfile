@@ -75,8 +75,7 @@ cask "orbstack"
 cask "bruno"
 
 # --- AI Tools ---
-# Anthropic Claude CLI
-cask "claude-code"
+# Claude Code is not here on purpose — see "Not installed by Homebrew" below.
 # Chat GPT app
 cask "chatgpt"
 # OpenAI Codex CLI
@@ -89,6 +88,14 @@ cask "antigravity"
 cask "antigravity-ide"
 # Run and chat with local LLMs
 cask "lm-studio"
+
+# --- Not installed by Homebrew ---
+# Claude Code. Deliberately not the cask: it trails the real release by days
+# and cannot self-update, because brew owns the artifact. The native installer
+# keeps versioned builds under ~/.local/share/claude/versions and updates itself.
+# Guarded because brew evaluates this file on `bundle list` and `bundle check`
+# as well as on install, so an unguarded system() would reinstall every time.
+system "curl -fsSL https://claude.ai/install.sh | bash" unless File.exist?("#{Dir.home}/.local/bin/claude")
 
 # --- Brews: AI Tools ---
 # Token-optimized CLI proxy — reduces Claude API token usage 60-90%
@@ -169,6 +176,7 @@ if WORK_MACHINE
   tap "datadog-labs/pack"
   tap "atlassian/homebrew-acli"
   tap "sourcegraph/src-cli"
+  tap "gleanwork/tap"
   tap "ai4dp/ensemble", "ssh://git@code.corp.indeed.com/ai4dp/ensemble.git"
 
   # AI-assisted code editor built on VS Code
@@ -191,4 +199,6 @@ if WORK_MACHINE
   brew "datadog-labs/pack/pup"
   # Sourcegraph CLI for code search
   brew "sourcegraph/src-cli/src-cli"
+  # Glean CLI for enterprise search — formula is glean-cli, binary is `glean`
+  brew "gleanwork/tap/glean-cli"
 end
