@@ -16,7 +16,7 @@ WORK_MACHINE = [
 
 # --- Terminals & Editors ---
 # GPU-accelerated terminal
-cask "ghostty"
+cask "kitty"
 # feature-rich terminal emulator
 cask "iterm2"
 # GUI wrapper for vim
